@@ -1,0 +1,25 @@
+version: '3.9'
+name: mysql_local
+
+services:
+  db:
+    env_file:
+      - path: ./.env
+        required: true # default
+      - path: ./.env.local
+        required: false
+
+    image: mariadb:${MARIADB_VERSION}
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ${MARIADB_LOCAL_DIR}${MARIADB_DATA_DIR}:/var/lib/mysql
+      - ${MARIADB_LOCAL_DIR}${MARIADB_CONF_DIR}:/etc/mysql/conf.d
+      - ${MARIADB_LOCAL_DIR}${MARIADB_ETC_DIR}:/etc/mysql
+    ports:
+      - ${MYSQL_PORT}:3306 
