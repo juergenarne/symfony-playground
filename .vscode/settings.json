@@ -1,0 +1,31 @@
+{
+    // see: https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/settings.md
+    "php.suggest.basic": false,
+    "editor.quickSuggestions": { "comments": true },
+    "liveSassCompile.settings.formats":[
+        // This is Default. (Path is relative)
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../../../public/assets/css"
+        },
+        // More Complex (Path the same only absolute)
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/public/assets/css"
+        }
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "/frontend/lib/scss/styles.scss",
+    ],
+    "liveSassCompile.settings.excludeList": [ 
+        "/frontend/node_modules/**",
+        "/.vscode/**",
+        "/vendor/**",
+    ], 
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 2 versions"
+    ]
+}
