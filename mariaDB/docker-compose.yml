@@ -1,5 +1,4 @@
-version: '3.9'
-name: mysql_local
+name: mariadb_local
 
 services:
   db:

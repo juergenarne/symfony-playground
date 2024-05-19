@@ -1,0 +1,32 @@
+.red-tooltip {
+  --bs-tooltip-bg: var(--bs-red);
+  --bs-tooltip-color: var(--bs-white);
+}
+
+.orange-tooltip {
+  --bs-tooltip-bg: var(--bs-orange);
+  --bs-tooltip-color: var(--bs-white);
+  --bs-tooltip-font-size: 1;
+  --bs-tooltip-border-radius: 6px!important;
+}
+
+.tooltip-big {
+  --bs-tooltip-font-size: 1.2;
+}
+
+.tooltip-danger {
+  --bs-tooltip-bg: var(--bs-danger);
+  --bs-tooltip-color: var(--bs-white);
+}
+
+.tooltip-info {
+  --bs-tooltip-bg: var(--bs-info);
+  --bs-tooltip-color: var(--bs-white);
+}
+
+@each $color, $value in $theme-colors {
+  .tooltip-#{$color} {
+    --bs-tooltip-bg: var(--bs-#{$color});
+    --bs-tooltip-color: var(--bs-white);  
+  }
+}
