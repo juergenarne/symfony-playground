@@ -18,6 +18,14 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+.DS_Store
+/node_modules
+/public/build
+
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
 /public/build/
